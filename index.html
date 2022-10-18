@@ -18,7 +18,7 @@
                     <form action="">
                         <label for="choose-category">Choose Category</label>
                         <select name="choose-category" id="category-dropdown">
-                        <option value="" selected>Please Select</option>
+                        <option value="" disable selected>Please Select</option>
                         <option value="expenses">Expenses</option>
                         <option value="income">Income</option>
                         <option value="tips">Tips</option>
@@ -39,7 +39,7 @@
                         <div class="label">
                             <label for="">Expense Cost:</label><br><input type="number" id="expenseCost">
                         </div>
-                        <button type="button" value="submit" class="submitBtn6">submit</button>
+                        <button type="button" value="submit" class="submitBtn6 submitBtnAll">submit</button>
                     </form>
                 </div>
                 <!-- Income Div-->
@@ -51,19 +51,19 @@
                         <div class="label">
                             <label for="">Income Amount:</label><br><input type="number" id="incomeAmount">
                         </div>
-                        <button type="button" value="submit" class="submitBtn7">submit</button>
+                        <button type="button" value="submit" class="submitBtn7 submitBtnAll">submit</button>
                     </form>
                 </div>
                 <!-- tips input Div-->
                 <div class="tips">
                     <form action="#">
                         <div class="label" >
-                            <label for="">Date Worked:</label><br><input type="text" id="tipDate">
+                            <label for="">Date Worked:</label><br><input type="date" id="tipDate">
                         </div>
                         <div class="label">
                             <label for="">Amount Made:</label><br><input type="number" id="tipAmount">
                         </div>
-                        <button  type="button" value="submit" class="submitBtn">Submit</button>  
+                        <button  type="button" value="submit" class="submitBtn submitBtnAll">Submit</button>  
                     </form> 
                 </div>
                 <!-- grocery input Div-->
@@ -75,7 +75,7 @@
                         <div class="label">
                             <label for="">Amount spent:</label><br><input type="number" id="grocPrice">
                         </div>
-                        <button  type="button" value="submit" class="submitBtn1">Submit</button>   
+                        <button  type="button" value="submit" class="submitBtn1 submitBtnAll">Submit</button>   
                     </form>
                 </div>
                 <!-- Myslef input Div-->
@@ -87,7 +87,7 @@
                         <div class="label">
                             <label for="">The Amount:</label><br><input type="number" id="thePrice">
                         </div>
-                        <button  type="button" value="submit" class="submitBtn2">Submit</button>   
+                        <button  type="button" value="submit" class="submitBtn2 submitBtnAll">Submit</button>   
                     </form>
                 </div>
                 <!-- Eating Out input Div-->
@@ -99,7 +99,7 @@
                         <div class="label">
                             <label for="">Price:</label><br><input type="number" id="foodPrice">
                         </div>
-                        <button  type="button" value="submit" class="submitBtn3">Submit</button>   
+                        <button  type="button" value="submit" class="submitBtn3 submitBtnAll">Submit</button>   
                     </form>
                 </div>
                 <!-- Misc input Div-->
@@ -111,67 +111,75 @@
                         <div class="label">
                             <label for="">Price:</label><br><input type="number" id="miscPrice">
                         </div>
-                        <button  type="button" value="submit" class="submitBtn4">Submit</button>   
+                        <button  type="button" value="submit" class="submitBtn4 submitBtnAll">Submit</button>   
                     </form>
                 </div>
                 <!-- Gas input Div-->
                 <div class="gas">
                     <form action="#">
                         <div class="label" >
-                            <label for="">Date:</label><br><input type="text" id="gasDate">
+                            <label for="">Date:</label><br><input type="date" id="gasDate">
                         </div>
                         <div class="label">
                             <label for="">Price:</label><br><input type="number" id="gasPrice">
                         </div>
-                        <button  type="button" value="submit" class="submitBtn5">Submit</button>   
+                        <button  type="button" value="submit" class="submitBtn5 submitBtnAll">Submit</button>   
                     </form>
                 </div>
 
                 
             </div>
-            <div class="row">
+            <div class="row rowAll">
                 <div class="col">
                     <table>
-                            <td class="tableTotal">Expense Total</td><td class="tableTotal" id="expenseTotal"></td>
+                            <td class="tableTotal">Expense Total</td>
+                            <td class="tableTotal" id="expenseTotal"></td>
                     </table>
                 </div>
                 <div class="col">
                     <table>
-                        <td class="tableTotal">Income Total</td><td class="tableTotal" id="incomeTotal"></td>
+                        <td class="tableTotal">Income Total</td>
+                        <td class="tableTotal" id="incomeTotal"></td>
                     </table>
                 </div>
                 <div class="col">
                     <table>
-                        <td class="tableTotal">Tip Total</td><td class="tableTotal" id="tipTotal"></td>
+                        <td class="tableTotal">Tip Total</td>
+                        <td class="tableTotal" id="tipTotal"></td>
                     </table>
                 </div>
             </div>
-            <div class="row">
+            <div class="row rowAll">
                 <div class="col-4">
                     <table>
-                        <td class="tableTotal">Grocery Total</td><td class="tableTotal" id="groceryTotal"></td>
+                        <td class="tableTotal">Grocery Total</td>
+                        <td class="tableTotal" id="groceryTotal"></td>
                     </table>
                 </div>
                 <div class="col-4">
                     <table>
-                        <td class="tableTotal">Myself Total</td><td class="tableTotal" id="myselfTotal"></td>
+                        <td class="tableTotal">Myself Total</td>
+                        <td class="tableTotal" id="myselfTotal"></td>
                     </table>
                 </div>
                 <div class="col">
                     <table>
-                        <td class="tableTotal">Eating Out Total</td><td class="tableTotal" id="eatingOutTotal"></td>
+                        <td class="tableTotal">Eating Total</td>
+                        <td class="tableTotal" id="eatingOutTotal"></td>
                     </table>
                 </div>
             </div>
-            <div class="row">
+            <div class="row rowAll">
                 <div class="col-4">
                     <table>
-                        <td class="tableTotal">Misc</td><td class="tableTotal" id="miscTotal"></td>
+                        <td class="tableTotal">Misc</td>
+                        <td class="tableTotal" id="miscTotal"></td>
                     </table>
                 </div>
                 <div class="col-4">
                     <table>
-                        <td class="tableTotal">Gas Total</td><td class="tableTotal" id="gasTotal"></td>
+                        <td class="tableTotal">Gas Total</td>
+                        <td class="tableTotal" id="gasTotal"></td>
                     </table>
                 </div>
             </div>

@@ -23,9 +23,11 @@ const categorys = ['Expenses','Income', 'Groceries', 'Myself', 'Eating Out', 'Mi
 {name: 'Myself', amount: 0},
 ]*/
 const expenses = []
-const income = [{name: 'Check 1', amount: 0},
- {name: 'Check 2', amount: 0},
- {name: 'Check 3', amount: 0}];
+const income = [{name: 'Tips 1st-7th', amount: 0},
+ {name: 'Tips 8th-14th', amount: 0},
+  {name: 'Tips 15th-21st', amount: 0},
+{name: 'Tips 22nd-28th', amount: 0},
+{name: 'Tips 29th-31st', amount: 0}];
 const tips = []
 const groceries = [];
 const eatingOut = [];
@@ -43,6 +45,25 @@ function addTable(array) {
        info +=`<tr><td class='tableData'</td>${array[i].name}<td id='id${id}' class='tableData'>$${array[i].amount}</td></tr>`
     }
     return info
+}
+
+/* adding tips to incomeTable */
+function addTippedIncome() {
+    for(let i = 0;i < tips.length; i++) {
+        if(tips[i].name === '1st' || '2nd' || '3rd' || '4th' || '5th' || '6th' || '7th'){
+        let sum = 0;
+        sum += tips[i].amount
+        income[0].amount = sum
+    } else if(tips[i].name === '8th' || '9th' || '10th' || '11th' || '12th' || '13th' || '14th') {
+        let sum = 0
+        sum += tips[i].amount
+        income[1].amount += sum
+    }
+        
+    }
+    console.log(income)
+    console.log(tips)
+    
 }
 
 
@@ -86,6 +107,7 @@ miscTable.innerHTML = addMisc
 
 /* gas Table */
 const gasTable = document.querySelector('#gasTable')
+
 addGas = addTable(gas)
 gasTable.innerHTML = addGas
 
@@ -185,14 +207,14 @@ dropDown.addEventListener('change', function() {
             let value = document.querySelector('#tipAmount').value
             let content = document.querySelector('#tipDate').value
             tips.push({name: content, amount: Number(value)})
-            let tips2 = []
-            tips2 = tips
-            tipsTable.innerHTML = addTable(tips2)
+            tipsTable.innerHTML = addTable(tips)
             tipTotal.textContent = total(tips)
             document.querySelector('#tipAmount').value = ''
             document.querySelector('#tipDate').value = ''
-            addIncome(tips2)
-            
+            incomeTable.innerHTML = addTable(income)
+            incomeTotal.textContent = total(income)
+            addTippedIncome()
+
         })
     } else if(selectedItem === 'groceries') {
         gasDiv.style.display = 'none'
@@ -207,9 +229,7 @@ dropDown.addEventListener('change', function() {
             let value = document.querySelector('#grocPrice').value
             let content = document.querySelector('#grocLocation').value
             groceries.push({name: content, amount: Number(value)})
-            let groceries2 = []
-            groceries2 = groceries
-            groceryTable.innerHTML = addTable(groceries2);
+            groceryTable.innerHTML = addTable(groceries);
             groceryTotal.textContent = total(groceries)
             document.querySelector('#grocPrice').value = ''
             document.querySelector('#grocLocation').value = ''
@@ -224,12 +244,13 @@ dropDown.addEventListener('change', function() {
         expenseDiv.style.display = 'none'
         incomeDiv.style.display = 'none'
         button2.addEventListener('click', function() {
+            alert('swag')
             let value = document.querySelector('#thePrice').value
             let content = document.querySelector('#theStuff').value
             myself.push({name: content, amount: Number(value)})
-            let myself2 = [];
-            myself2 = myself
-            myselfTable.innerHTML = addTable(myself2)
+            //let myself2 = [];
+            //myself2 = myself
+            myselfTable.innerHTML = addTable(myself)
             myselfTotal.textContent = total(myself)
             document.querySelector('#thePrice').value = ''
             document.querySelector('#theStuff').value = ''
@@ -287,7 +308,7 @@ dropDown.addEventListener('change', function() {
         button5.addEventListener('click', function() {
             let value = document.querySelector('#gasPrice').value;
             let content = document.querySelector('#gasDate').value;
-            gas.push({name: content, amount: Number(value)});
+            gas.push({name: content, amount: value});
             let gas2 = [];
             gas2 = gas
             gasTable.innerHTML = addTable(gas2);
@@ -326,8 +347,8 @@ dropDown.addEventListener('change', function() {
         groceryDiv.style.display = 'none'
         incomeDiv.style.display = 'block'
         button7.addEventListener('click', function() {
-            let value = document.querySelector('#newIncome').value;
-            let content = document.querySelector('#incomeAmount')
+            let value = document.querySelector('#incomeAmount').value;
+            let content = document.querySelector('#newIncome').value;
             income.push({name: content, amount: Number(value)});
             let income2 = []
             income2 = income
@@ -339,5 +360,4 @@ dropDown.addEventListener('change', function() {
     }
 })
 
-// adding to income table
 
